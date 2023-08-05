@@ -1,6 +1,6 @@
 export function createUser(userData) {
   return new Promise(async (resolve) => {
-    const response = await fetch('http://localhost:8080/users', {
+    const response = await fetch('https://e-commerceapi-tv21.onrender.com/users', {
       method: 'POST',
       body: JSON.stringify(userData),
       headers: { 'content-type': 'application/json' },
@@ -14,7 +14,7 @@ export function checkUser(loginInfo) {
   return new Promise(async (resolve, reject) => {
     const email = loginInfo.email;
     const password = loginInfo.password;
-    const response = await fetch('http://localhost:8080/users?email=' + email);
+    const response = await fetch('https://e-commerceapi-tv21.onrender.com/users?email=' + email);
     const data = await response.json();
     console.log({data})
     if (data.length) {
